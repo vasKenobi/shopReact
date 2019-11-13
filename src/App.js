@@ -1,7 +1,13 @@
 import React from 'react';
 
 function App(){
-	return "Hello"
+	return (
+    <div>
+      <h1>Hello</h1>
+      <p>Hello</p>
+    </div>
+    )
+  
 }
 
 
