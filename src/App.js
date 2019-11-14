@@ -9,49 +9,54 @@ import './cart.css'
 const App = () => {
 	return (
 		<div>
-			<header class="header">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-3">
-							<div class="logo">
+			<header className="header">
+				<div className="container">
+					<div className="row">
+						<div className="col-lg-3">
+							<div className="logo">
 								<img src="img/logo.png" alt="" />
 							</div>
 						</div>
-						<div class="col-lg-6">
-							<div class="menu">
+
+						<div className="col-lg-6">
+							<div className="menu">
 								<ul>
-									<li><a href="">Home</a></li>
-									<li><a href="">Products</a></li>
-									<li><a href="">Payment</a></li>
-									<li><a href="">Shipping</a></li>
+								<li><a href="/">Home</a></li>
+									<li><a href="/">Products</a></li>
+									<li><a href="/">Payment</a></li>
+									<li><a href="/">Shipping</a></li>
 								</ul>
 							</div>
 						</div>
-						<div class="col-lg-3">
-							<div class="cart text-center">
-								<div class="products-count">0</div>
-								<div class="products-price">$500</div>
+						<div className="col-lg-3">
+							<div className="cart text-center">
+								<div className="products-count">0</div>
+								<div className="products-price">$500</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</header>
-			<main class="main">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-3">
+
+			<main className="main">
+				<div className="container">
+					<div className="row">
+						<div className="col-lg-3">
 							
 						</div>
-						<div class="col-lg-9">
+						<div className="col-lg-9">
 							
 						</div>
 					</div>
 				</div>
 			</main>
-			<footer class="footer">
+
+			<footer className="footer">
 				
 			</footer>
 		</div>
+
+
 	)
 }
 
