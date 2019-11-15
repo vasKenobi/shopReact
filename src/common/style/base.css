@@ -29,6 +29,13 @@ body {
 	text-align: center;
 }
 
+.page-title {
+	text-align: center;
+	font-size: 32px;
+	color:white;
+	margin: 10px 0;
+}
+
 @media(min-width: 768px) {
 	.container {
 		width: 750px;
