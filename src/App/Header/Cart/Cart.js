@@ -23,6 +23,15 @@ const Cart = ({
                 ))
             }
 
+            <div>
+                Total : {
+                    keys(productsInCart).reduce((total,productId)=>(
+                        total + (productsInCart[productId] * productsMap[productId].price)
+                    ),0)
+                } $
+            </div>
+
+
         </div>
     )
 }
