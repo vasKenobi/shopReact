@@ -1,35 +1,30 @@
-import React from 'react'
+import React,{Component} from 'react'
 import PropTypes from 'prop-types';
 import './ProductListItem.css'
 
-const ProductListItem = ({
-    name,
-    description = "No description ...",
-    capacity,
-    price,
-    type,
-    image,
-}) => {
-    return (
-        <div className="product-list-item">
-            <div className="product-image">
-                <img src={image} alt=""/>
+class ProductListItem extends Component {
+    render() {
+        return (
+            <div className="product-list-item">
+                <div className="product-image">
+                    <img src={this.props.image} alt=""/>
+                </div>
+                <div className="product-title">{this.props.name}</div>
+                <div className="product-description">{this.props.description}</div>
+                <div className="product-features">Type: {this.props.type}</div>
+                <div className="product-features">Capacity: {this.props.capacity} Gb</div>
+                <div className="product-price">Price : {this.props.price} $</div>
+                <div className="product-quantity">
+                     <button>-</button>
+                     <input type="text" value="1" readOnly/>
+                     <button>+</button>
+                </div>
+                <button className="btn btn-add-to-cart">Add to cart</button>
             </div>
-            <div className="product-title">{name}</div>
-            <div className="product-description">{description}</div>
-            <div className="product-features">Type: {type}</div>
-            <div className="product-features">Capacity: {capacity} Gb</div>
-            <div className="product-price">Price : {price} $</div>
-            <div className="product-quantity">
-                 <button>-</button>
-                 <input type="text" value="1"/>
-                 <button>+</button>
-            </div>
-            <button className="btn btn-add-to-cart">Add to cart</button>
-
-        </div>
-    )
+        )
+    }
 }
+
 
 
 ProductListItem.propTypes = {
@@ -42,6 +37,9 @@ ProductListItem.propTypes = {
 
 }
 
+ProductListItem.defaultProps = {
+    description:"No description ..."
+}
 
 
 
