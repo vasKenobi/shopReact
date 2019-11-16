@@ -4,7 +4,7 @@ import './ProductListItem.css'
 
 const ProductListItem = ({
     name,
-    description,
+    description = "No description ...",
     capacity,
     price,
     type,
@@ -20,6 +20,11 @@ const ProductListItem = ({
             <div className="product-features">Type: {type}</div>
             <div className="product-features">Capacity: {capacity} Gb</div>
             <div className="product-price">Price : {price} $</div>
+            <div className="product-quantity">
+                 <button>-</button>
+                 <input type="text" value="1"/>
+                 <button>+</button>
+            </div>
             <button className="btn btn-add-to-cart">Add to cart</button>
 
         </div>
@@ -36,9 +41,8 @@ ProductListItem.propTypes = {
     price:PropTypes.number.isRequired,
 
 }
-ProductListItem.defaultProps = {
-    description:"No description ...",
-}
+
+
 
 
 export default ProductListItem
