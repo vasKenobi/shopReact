@@ -4,16 +4,25 @@ import './ProductListItem.css'
 
 class ProductListItem extends Component {
     render() {
+        const {
+            name,
+            description,
+            capacity,
+            type,
+            price,
+            image,
+        } = this.props
+
         return (
             <div className="product-list-item">
                 <div className="product-image">
-                    <img src={this.props.image} alt=""/>
+                    <img src={image} alt=""/>
                 </div>
-                <div className="product-title">{this.props.name}</div>
-                <div className="product-description">{this.props.description}</div>
-                <div className="product-features">Type: {this.props.type}</div>
-                <div className="product-features">Capacity: {this.props.capacity} Gb</div>
-                <div className="product-price">Price : {this.props.price} $</div>
+                <div className="product-title">{name}</div>
+                <div className="product-description">{description}</div>
+                <div className="product-features">Type: {type}</div>
+                <div className="product-features">Capacity: {capacity} Gb</div>
+                <div className="product-price">Price : {price} $</div>
                 <div className="product-quantity">
                      <button>-</button>
                      <input type="text" value="1" readOnly/>
