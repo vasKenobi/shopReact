@@ -4,7 +4,7 @@ import './ProductListItem.css'
 
 class ProductListItem extends Component {
     state = {
-        productsCount:1
+        productsCount:1,
     }
 
     onIncrementClick () {
@@ -13,11 +13,12 @@ class ProductListItem extends Component {
         }))
     }
 
-    onDecrementClick () {
+    onDecrementClick = () => {
         this.setState((prevState)=>({
             productsCount:prevState.productsCount - 1
         }))
     }
+
 
 
     render() {
@@ -30,6 +31,8 @@ class ProductListItem extends Component {
             image,
         } = this.props
 
+        console.log(this)
+
         return (
             <div className="product-list-item">
                 <div className="product-image">
@@ -41,9 +44,15 @@ class ProductListItem extends Component {
                 <div className="product-features">Capacity: {capacity} Gb</div>
                 <div className="product-price">Price : {price} $</div>
                 <div className="product-quantity">
-                     <button onClick={()=>this.onDecrementClick()}>-</button>
+                     <button 
+                        onClick={this.onDecrementClick}
+                        disabled={this.state.productsCount <= 1}
+                        >-</button>
                      <input type="text" value={this.state.productsCount} readOnly/>
-                     <button onClick={()=>this.onIncrementClick()}>+</button>
+                     <button 
+                        onClick={()=>this.onIncrementClick()}
+                        disabled={this.state.productsCount >= 10}
+                        >+</button>
                 </div>
                 <button className="btn btn-add-to-cart">Add to cart</button>
             </div>
