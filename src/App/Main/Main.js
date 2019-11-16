@@ -2,7 +2,10 @@ import React from 'react'
 import ProductsList from './Products/ProductsList'
 
 
-const Main = () => {
+const Main = ({
+	addProductToCart,
+}) => {
+
 	return (
 		<main className="main">
 			<div className="container">
@@ -11,7 +14,10 @@ const Main = () => {
 						Filter
 					</div>
 					<div className="col-lg-9">
-						<ProductsList/>
+						<ProductsList
+							addProductToCart={addProductToCart}
+						/>
+
 					</div>
 				</div>
 			</div>

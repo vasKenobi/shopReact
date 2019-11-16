@@ -14,8 +14,21 @@ class App extends Component {
 		cartData: {
 			count:0,
 			price:0
-		}
+		},
+		name:"Ivan",
+		age:"35",
+
 	}
+
+	addProductToCart = (price,count) =>{
+		this.setState((prevState)=>({
+			cartData:{
+				count:prevState.cartData.count + count,
+				price:prevState.cartData.price + (price * count)
+			}
+		}))
+	}
+
 	render() {
 		return (
 			<div>
@@ -24,7 +37,10 @@ class App extends Component {
 					
 				/>
 
-				<Main/>
+				<Main 
+					addProductToCart={this.addProductToCart}
+				/>
+
 				<Footer/>
 			</div>
 		)
