@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import './ProductListItem.css'
 
 class ProductListItem extends Component {
+    state = {
+        productsCount:1
+    }
+
     render() {
         const {
             name,
@@ -25,7 +29,7 @@ class ProductListItem extends Component {
                 <div className="product-price">Price : {price} $</div>
                 <div className="product-quantity">
                      <button>-</button>
-                     <input type="text" value="1" readOnly/>
+                     <input type="text" value={this.state.productsCount} readOnly/>
                      <button>+</button>
                 </div>
                 <button className="btn btn-add-to-cart">Add to cart</button>
