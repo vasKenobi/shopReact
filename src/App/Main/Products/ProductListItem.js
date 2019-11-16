@@ -4,6 +4,9 @@ import './ProductListItem.css'
 const ProductListItem = (props) => {
     return (
         <div className="product-list-item">
+            <div className="product-image">
+                <img src={props.image} alt=""/>
+            </div>
             <div className="product-title">{props.name}</div>
             <div className="product-description">{props.description}</div>
             <div className="product-features">Type: {props.type}</div>

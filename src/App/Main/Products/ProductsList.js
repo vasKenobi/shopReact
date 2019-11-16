@@ -16,6 +16,7 @@ const ProductsList = () => {
                                 capacity={product.capacity}
                                 type={product.type}
                                 price={product.price}
+                                image={product.image}
                             />
                         </div> 
                     ))
