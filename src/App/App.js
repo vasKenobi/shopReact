@@ -20,11 +20,11 @@ class App extends Component {
 
 	}
 
-	addProductToCart = (price,count) =>{
+	addProductToCart = (productId,count) =>{
 		this.setState((prevState)=>({
-			cartData:{
-				count:prevState.cartData.count + count,
-				price:prevState.cartData.price + (price * count)
+			productsInCart:{
+				...prevState.productsInCart,
+				[productId]:(prevState.productsInCart[productId] || 0 ) + count
 			}
 		}))
 	}

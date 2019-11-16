@@ -22,6 +22,7 @@ const ProductsList = ({
                     })=> (
                         <div className="col-lg-6" key={id}>
                             <ProductListItem
+                            id={id}
                             name={name}
                             description={description}
                             capacity={capacity}
