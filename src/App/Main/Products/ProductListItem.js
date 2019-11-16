@@ -2,6 +2,7 @@ import React from 'react'
 import './ProductListItem.css'
 
 const ProductListItem = (props) => {
+    console.log(props)
     return (
         <div className="product-list-item">
             <div className="product-image">
