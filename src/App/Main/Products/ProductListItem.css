@@ -70,3 +70,8 @@
 .product-quantity button:hover {
     background-color: grey;
 }
+
+button:disabled,button[disabled] {
+    background-color: #ccc;
+    
+}
