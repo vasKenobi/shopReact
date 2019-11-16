@@ -33,7 +33,6 @@ class ProductListItem extends Component {
             id={id}
         } = this.props
 
-        console.log(this)
 
         return (
             <div className="product-list-item">
