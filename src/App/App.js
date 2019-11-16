@@ -19,7 +19,11 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<Header/>
+				<Header 
+					cartData={this.state.cartData}
+					
+				/>
+
 				<Main/>
 				<Footer/>
 			</div>
