@@ -1,9 +1,16 @@
 import React from 'react'
+import {Route} from 'react-router-dom'
 import ProductsList from './Products/ProductsList'
+
+import CartPage from './CartPage/CartPage'
+import ShippingPage from './ShippingPage/ShippingPage'
+import PaymentPage from './PaymentPage/PaymentPage'
+
 
 
 const Main = ({
 	addProductToCart,
+	productsInCart,
 }) => {
 
 	return (
@@ -14,9 +21,19 @@ const Main = ({
 						Filter
 					</div>
 					<div className="col-lg-9">
-						<ProductsList
-							addProductToCart={addProductToCart}
+					<Route path="/" exact render={()=>(
+							<ProductsList
+								addProductToCart={addProductToCart}
 						/>
+						)}/>
+						<Route path="/cart" render={()=>(
+							<CartPage
+								productsInCart={productsInCart}
+						/>)}/>
+
+						<Route path="/shipping" component={ShippingPage}/>
+						<Route path="/payment" component={PaymentPage}/>
+
 
 					</div>
 				</div>

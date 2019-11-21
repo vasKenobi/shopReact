@@ -1,19 +1,17 @@
 import React from 'react'
 import {keys} from 'lodash'
+import {Link} from 'react-router-dom'
 import './cart.css'
-import products from '../../Main/Products/products'
+import products,{getProductsMap} from '../../Main/Products/products'
+import CartTotal from '../../../Components/Cart/CartTotal'
 
-const productsMap = products.reduce((map,product)=>({
-    ...map,
-    [product.id]:product,
-}),{})
 
-console.log(products)
-console.log(productsMap)
+
 
 
 const Cart = ({
-    productsInCart
+    productsInCart,
+    productsMap = getProductsMap(products)
 }) => {
     return (
         <div className="cart text-center">
@@ -23,13 +21,11 @@ const Cart = ({
                 ))
             }
 
-            <div>
-                Total : {
-                    keys(productsInCart).reduce((total,productId)=>(
-                        total + (productsInCart[productId] * productsMap[productId].price)
-                    ),0)
-                } $
-            </div>
+            <CartTotal
+                productsInCart={productsInCart}
+            />
+
+            <Link to="/cart">Show cart</Link>
 
 
         </div>
