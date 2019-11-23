@@ -12,17 +12,14 @@ const CartPage = ({
     return (
         <div>
             <h1 className="page-title">Cart</h1>
-                <div className="cart text-center">
-                    <CartProductList
-                        productsInCart={productsInCart}
-                        CartItem={CartProductListItemExtended}
-                   />  
-           
-                    <CartTotal
-                        productsInCart={productsInCart}
-                    />
-                    
-                </div>
+            <CartProductList
+                productsInCart={productsInCart}
+                CartItem={CartProductListItemExtended}
+            />     
+            <CartTotal
+                productsInCart={productsInCart}
+            />
+
         </div>
     )
 }
