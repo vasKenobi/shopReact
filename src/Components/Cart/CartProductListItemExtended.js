@@ -24,6 +24,7 @@ const CartProductListItemExtended = ({
                 <p className="cart-extended-sum">
                         Sum for this item: <span className="bold sum-price">$ {(product.price * productsCount)} </span> 
                 </p>
+                <button>Delete Product</button>
                 
             </div>
         </div>
