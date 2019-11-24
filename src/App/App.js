@@ -32,10 +32,9 @@ class App extends Component {
 
 			let prevProductsInCart = {...prevState.productsInCart}
 
-			delete prevProductsInCart[productId]
+			return{
+				productsInCart: omit(prevProductsInCart, [productId])
 
-			return {
-				productsInCart : prevProductsInCart
 			}
 		})
 	}
