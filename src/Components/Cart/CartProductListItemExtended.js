@@ -37,5 +37,6 @@ class CartProductListItemExtended extends Component {
 }
 
 
+
 export default CartProductListItemExtended
 

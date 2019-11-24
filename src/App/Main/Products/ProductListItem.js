@@ -57,8 +57,7 @@ class ProductListItem extends Component {
                 </div>
                 <button 
                     className="btn btn-add-to-cart"
-                    onClick={()=>addProductToCart(id,this.state.productsCount)}
-                    >Add to cart</button>
+                    onClick={()=>addProductToCart(id, this.state.productsCount)}>Add to cart</button>
 
             </div>
         )
