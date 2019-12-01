@@ -30,8 +30,16 @@ class CartProductListItemExtended extends Component {
                         </p>
                         <ProductQuantity
                             productsCount={productsCount}
-                            onDecrementClick={()=>changeProductQuantity(product.id,productsCount-1)}
+                            onDecrementClick={()=>{
+                                if(productsCount===1) {
+                                    removeProductFromCart(product.id)
+                                } else {
+                                    changeProductQuantity(product.id,productsCount-1)
+                                }
+                            }}
+        
                             onIncrementClick={()=>changeProductQuantity(product.id,productsCount+1)}
+                            minCount={0}
                         />
 
                         <p className="cart-extended-sum">

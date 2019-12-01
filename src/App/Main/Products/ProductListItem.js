@@ -49,6 +49,7 @@ class ProductListItem extends Component {
                     productsCount={this.state.productsCount}
                     onIncrementClick={this.onIncrementClick}
                     onDecrementClick={this.onDecrementClick}
+                    minCount={1}
                 />
 
                 <button 
