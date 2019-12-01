@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types';
 import './ProductListItem.css'
 import ProductQuantity from '../../../Components/Quantity/ProductQuantity';
@@ -58,7 +59,10 @@ class ProductListItem extends Component {
                     {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
                 </button>
 
-                <div className="product-title">{name}</div>
+                <div className="product-title">
+                    <Link to={`/products/${id}`}>{name}</Link>
+                </div>
+
                 <div className="product-description">{description}</div>
                 <div className="product-features">Type: {type}</div>
                 <div className="product-features">Capacity: {capacity} Gb</div>

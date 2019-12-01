@@ -75,3 +75,6 @@ button:disabled,button[disabled] {
     background-color: #ccc;
     
 }
+.linkClass{
+    color: red;
+}
