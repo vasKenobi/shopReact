@@ -20,6 +20,19 @@ class ProductListItem extends Component {
             productsCount:prevState.productsCount - 1
         }))
     }
+    renderLike(){
+        const {
+            isLiked,
+            addLike,
+            removeLike,
+            id
+        } = this.props;
+        if(isLiked) {
+            removeLike(id)
+        } else {
+            addLike(id)
+        }
+    }
 
 
 
@@ -33,7 +46,7 @@ class ProductListItem extends Component {
             image,
             addProductToCart,
             id={id},
-            isLiked,
+            isLiked = false,
         } = this.props
 
 
@@ -42,7 +55,7 @@ class ProductListItem extends Component {
                 <div className="product-image">
                     <img src={image} alt=""/>
                 </div>
-                <button>
+                <button onClick={()=>this.renderLike()}>
                     {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
                 </button>
 
@@ -88,8 +101,20 @@ ProductListItem.defaultProps = {
 const mapStateToProps = (state,props) => ({
     isLiked: state[props.id]
 })
+const mapDispatchToProps = (dispatch) => ({
+    addLike:(id)=>dispatch({
+        type:"LIKE",
+        id:id,
+    }),
+    removeLike:(id)=>dispatch({
+        type:"DISLIKE",
+        id:id,
+    }),
+})
 
 export default connect(
-    mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
+
 )(ProductListItem)
 
