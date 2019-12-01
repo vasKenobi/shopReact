@@ -1,6 +1,5 @@
 const productLikeReducer = (state = {
-    1:true,
-    2:true,
+    
 },action) => {
     switch(action.type) {
         case "LIKE": 

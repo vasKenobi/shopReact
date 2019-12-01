@@ -8,12 +8,7 @@ import PaymentPage from './PaymentPage/PaymentPage'
 
 
 
-const Main = ({
-	addProductToCart,
-	productsInCart,
-	removeProductFromCart,
-	changeProductQuantity
-}) => {
+const Main = () => {
 
 	return (
 		<main className="main">
@@ -23,17 +18,9 @@ const Main = ({
 						Filter
 					</div>
 					<div className="col-lg-9">
-					<Route path="/" exact render={()=>(
-							<ProductsList
-								addProductToCart={addProductToCart}
-						/>
-						)}/>
-						<Route path="/cart" render={()=>(
-							<CartPage
-								productsInCart={productsInCart}
-								removeProductFromCart = {removeProductFromCart}
-								changeProductQuantity={changeProductQuantity}
-						/>)}/>
+					<Route path="/" exact component={ProductsList}/>
+						<Route path="/cart" component={CartPage}/>
+
 
 						<Route path="/shipping" component={ShippingPage}/>
 						<Route path="/payment" component={PaymentPage}/>

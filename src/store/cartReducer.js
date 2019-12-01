@@ -1,8 +1,7 @@
 import {omit} from 'lodash'
 
 const cartReducer = (state={
-    1:5,
-    2:5,
+    
 }, action) => {
     switch(action.type){
         case "ADD_PRODUCT_TO_CART":
