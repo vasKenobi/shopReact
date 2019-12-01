@@ -9,6 +9,8 @@ class CartProductListItemExtended extends Component {
             productsCount,
             product,
             removeProductFromCart,
+            changeProductQuantity
+
         } = this.props
         return (
             <div className="cart-product-list-item-description">
@@ -26,7 +28,12 @@ class CartProductListItemExtended extends Component {
                         <p className="cart-extended-count">
                             Selected quantity: <span className="bold"> {productsCount} </span>  
                         </p>
-                        <ProductQuantity/>
+                        <ProductQuantity
+                            productsCount={productsCount}
+                            onDecrementClick={()=>changeProductQuantity(product.id,productsCount-1)}
+                            onIncrementClick={()=>changeProductQuantity(product.id,productsCount+1)}
+                        />
+
                         <p className="cart-extended-sum">
                             Sum for this item: <span className="bold sum-price">$ {(product.price * productsCount)} </span> 
                         </p>
