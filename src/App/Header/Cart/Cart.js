@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import './cart.css'
 
@@ -29,6 +29,11 @@ const Cart = ({
         </div>
     )
 }
+const mapStateToProps = (state) => ({
+    productsInCart:state.productsInCart
+})
 
 
-export default Cart
+export default connect(
+    mapStateToProps
+)(Cart)

@@ -110,6 +110,12 @@ const mapDispatchToProps = (dispatch) => ({
         type:"DISLIKE",
         id:id,
     }),
+    addProductToCart:(id,count)=>dispatch({
+        type:"ADD_PRODUCT_TO_CART",
+        id,
+        count,
+    })
+
 })
 
 export default connect(
