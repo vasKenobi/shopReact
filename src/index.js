@@ -5,9 +5,9 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux'
 
 import App from './App/App';
-import productLikeReducer from './store/productLikeReducer'
+import rootReducer from './store/rootReducer';
 
-const store = createStore(productLikeReducer)
+const store = createStore(rootReducer)
 
 
 ReactDOM.render(

@@ -55,14 +55,14 @@ class App extends Component {
 		return (
 			<div>
 				<Header 
-					productsInCart={this.state.productsInCart}
+					// productsInCart={this.state.productsInCart}
 					
 				/>
 				
 
 				<Main 
 					addProductToCart={this.addProductToCart}
-					productsInCart={this.state.productsInCart}
+					// productsInCart={this.state.productsInCart}
 					removeProductFromCart = {this.removeProductFromCart}
 					changeProductQuantity={this.changeProductQuantity}
 				/>
